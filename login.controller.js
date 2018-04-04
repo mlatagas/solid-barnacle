@@ -12,6 +12,7 @@
         vm.signUpWithGooglePopUp = signUpWithGooglePopUp;
         vm.userName;
         var provider = new firebase.auth.GoogleAuthProvider();
+        
         activate();
 
         function activate() {
