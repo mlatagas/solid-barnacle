@@ -1,0 +1,41 @@
+[debug] [2018-04-02T14:37:41.073Z] ----------------------------------------------------------------------
+[debug] [2018-04-02T14:37:41.078Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\andile\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-04-02T14:37:41.078Z] CLI Version:   3.17.7
+[debug] [2018-04-02T14:37:41.078Z] Platform:      win32
+[debug] [2018-04-02T14:37:41.078Z] Node Version:  v8.10.0
+[debug] [2018-04-02T14:37:41.079Z] Time:          Mon Apr 02 2018 16:37:41 GMT+0200 (South Africa Standard Time)
+[debug] [2018-04-02T14:37:41.080Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-02T14:37:41.111Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-02T14:37:41.113Z] > authorizing via signed-in user
+[debug] [2018-04-02T14:37:41.116Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-04-02T14:37:41.117Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/Zffo_ruSXxXfwNL3XquIZEjeOLozXrhygxl1U-0DYEc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Apr 02 2018 16:37:41 GMT+0200 (South Africa Standard Time)
+[debug] [2018-04-02T14:37:41.860Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-02T14:37:41.883Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/angularjs-auth-df5a7  
+  
+ Mon Apr 02 2018 16:37:41 GMT+0200 (South Africa Standard Time)
+[debug] [2018-04-02T14:37:43.704Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-02T14:37:43.705Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/angularjs-auth-df5a7/tokens  
+  
+ Mon Apr 02 2018 16:37:43 GMT+0200 (South Africa Standard Time)
+[debug] [2018-04-02T14:37:44.903Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-02T14:37:44.904Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/angularjs-auth-df5a7  
+  
+ Mon Apr 02 2018 16:37:44 GMT+0200 (South Africa Standard Time)
+[debug] [2018-04-02T14:37:47.179Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\andile\projects'...
+[info] 
+[debug] [2018-04-02T14:37:47.186Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/794850431696/clients/_:getWebAppConfig  
+  
+ Mon Apr 02 2018 16:37:47 GMT+0200 (South Africa Standard Time)
+[debug] [2018-04-02T14:37:48.341Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
