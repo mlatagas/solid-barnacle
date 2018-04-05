@@ -7,24 +7,25 @@
         var vm = this;
         //angular.extend(vm, $stateParams);// I have no idea what this line does
         vm.login = login;
+        vm.logOut = logOut;
         vm.signUp = signUp;
         vm.isLoggedIn;
         vm.signUpWithGooglePopUp = signUpWithGooglePopUp;
-        vm.userName;
         var provider = new firebase.auth.GoogleAuthProvider();
-        
+
         activate();
 
         function activate() {
-            //Add a realtime authentication listerner
-            firebase.auth().onAuthStateChanged(firebaseUser => {
-                if (!firebaseUser) {
-                    return;
-                }
-                vm.isLoggedIn = true;
-                setDisplayName(firebaseUser);
-                $state.go("homePage");
-            });
+            // Add a realtime authentication listerner
+            // firebase.auth().onAuthStateChanged(firebaseUser => {
+            //     if (!firebaseUser) {
+            //         return;
+            //     }
+            //     vm.isLoggedIn = true;
+            //     setDisplayName(firebaseUser);
+            //     console.log(vm);
+            //     $state.go("homePage");
+            // });
 
 
         }
@@ -36,14 +37,31 @@
                 vm.userName = firebaseUser.email;
                 return;
             }
+
             vm.userName = firebaseUser.displayName;
+            console.log(firebaseUser.displayName);
+            console.log(vm.userName);
+
         }
 
         function login() {
             const auth = firebase.auth();
-            const firebaseUser = auth.signInWithEmailAndPassword(vm.txtEmail, vm.txtPassword);
+            const firebaseUser = auth.signInWithEmailAndPassword(vm.txtEmail, vm.txtPassword).then(function (firebaseUser) {
+                setDisplayName(firebaseUser);
+                $state.go("homePage");
+            })
             firebaseUser.catch(e => console.log(e.message)); //Im not familiar with this syntax
         }
+
+        function logOut() {
+            firebase.auth().signOut().then(function () {
+                console.log('Signed Out');
+                // GOTO Landing
+            }, function (error) {
+                console.error('Sign Out Error', error);
+            });
+        }
+
 
         function signUp() {
             // TODO validate emails
