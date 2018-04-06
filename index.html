@@ -96,16 +96,16 @@
 
 <body ng-app="app">
   <div class="container-fluid">
-    <nav class="navbar navbar-dark bg-dark">
-      <ul class="navbar-nav">
-        <li ng-if="!vm.isLoggedIn" class="nav-item">
-          <a class="nav-link" ui-sref="login">login {{vm.isLoggedIn}}</a>
+    <nav >
+      <ul >
+        <li >
+          <a  ui-sref="login">login </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" ui-sref="buttons">buttons</a>
+        <li >
+          <a ui-sref="buttons">buttons</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" ng-click="vm.logOut">logout</a>
+        <li >
+          <a >logout</a>
         </li>
       </ul>
     </nav>
@@ -130,8 +130,9 @@
   <!-- AngularFire -->
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
   <script src="app.js"></script>
-  <script src="route.js"></script>
   <script src="login.controller.js"></script>
+
+  <script src="route.js"></script>
 
 
 </body>

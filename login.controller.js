@@ -9,26 +9,28 @@
         vm.login = login;
         vm.logOut = logOut;
         vm.signUp = signUp;
+
+        vm.userName;
         vm.isLoggedIn;
         vm.signUpWithGooglePopUp = signUpWithGooglePopUp;
         var provider = new firebase.auth.GoogleAuthProvider();
 
-        activate();
+        
 
         function activate() {
-            // Add a realtime authentication listerner
-            // firebase.auth().onAuthStateChanged(firebaseUser => {
-            //     if (!firebaseUser) {
-            //         return;
-            //     }
-            //     vm.isLoggedIn = true;
-            //     setDisplayName(firebaseUser);
-            //     console.log(vm);
-            //     $state.go("homePage");
-            // });
+           // Add a realtime authentication listerner
 
 
         }
+
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if (!firebaseUser) {
+                return;
+            }
+            vm.isLoggedIn = true;
+            setDisplayName(firebaseUser);
+        });
+
 
         function setDisplayName(firebaseUser) {
             console.log(firebaseUser.displayName);
@@ -39,17 +41,15 @@
             }
 
             vm.userName = firebaseUser.displayName;
-            console.log(firebaseUser.displayName);
             console.log(vm.userName);
 
         }
 
         function login() {
             const auth = firebase.auth();
-            const firebaseUser = auth.signInWithEmailAndPassword(vm.txtEmail, vm.txtPassword).then(function (firebaseUser) {
-                setDisplayName(firebaseUser);
+            const firebaseUser = auth.signInWithEmailAndPassword(vm.txtEmail, vm.txtPassword).then(function(firebaseUser){
                 $state.go("homePage");
-            })
+            });
             firebaseUser.catch(e => console.log(e.message)); //Im not familiar with this syntax
         }
 
