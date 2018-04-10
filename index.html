@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome to Firebase Hosting</title>
+  <title>Some Appropriate title</title>
 
   <!-- update the version number as needed -->
   <!-- <script defer src="/__/firebase/4.12.1/firebase-app.js"></script> -->
@@ -90,25 +90,18 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.8/angular-material.css">
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="styles/styles.css">
 
 </head>
 
 <body ng-app="app">
   <div class="container-fluid">
-    <nav >
-      <ul >
-        <li >
-          <a  ui-sref="login">login </a>
-        </li>
-        <li >
-          <a ui-sref="buttons">buttons</a>
-        </li>
-        <li >
-          <a >logout</a>
-        </li>
-      </ul>
-    </nav>
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+
+      <md-button md-no-ink="" class="md-primary" ui-sref="login">login</md-button>
+      <md-button md-no-ink="" class="md-primary" ng-controller="LoginController as vm" ng-click="vm.logOut()">logout</md-button>
+      <md-button md-no-ink="" class="md-primary" ui-sref="buttons">buttons</md-button>
+    </section>
     <div ui-view></div>
 
   </div>
@@ -131,10 +124,8 @@
   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
   <script src="app.js"></script>
   <script src="login.controller.js"></script>
-
+  <script src="database.controller.js"></script>
   <script src="route.js"></script>
-
-
 </body>
 
 </html>

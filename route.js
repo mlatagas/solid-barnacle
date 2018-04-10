@@ -11,21 +11,19 @@
             url: "/login",
             controller: "LoginController",
             controllerAs: "vm",
-            templateUrl: "login.html"
+            templateUrl: "templates/login.html"
   
         }).state('homePage', {
             url: "/home",
             controller: "LoginController",
             controllerAs: "vm",
-            templateUrl: "home.html"
-  
+            templateUrl: "templates/home.html"
         }).state('buttons', {
-            url: "/bottons",
-            controller: "LoginController",
+            url: "/buttons",
+            controller: "DatabaseController",
             controllerAs: "vm",
-            templateUrl: "buttons.html"
-  
-        })
+            templateUrl: "templates/buttons.html"
+        });
     }
 
 

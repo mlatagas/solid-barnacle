@@ -11,12 +11,6 @@
     firebase.initializeApp(config);
 
     angular
-        .module('app', ['firebase','ui.router','ngMaterial'])
-        .controller('MyCtrl', function ($firebaseObject, $scope) {
-            var vm = this;
-            const rootRef = firebase.database().ref().child('angular');
-            const ref = rootRef.child('object');
-            vm.object = $firebaseObject(ref);
+        .module('app', ['firebase','ui.router','ngMaterial']);
 
-        });
 })();

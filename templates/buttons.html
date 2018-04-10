@@ -1,7 +1,7 @@
 <div ng-cloak="">
-  <md-content>
+  <!-- <md-content> -->
 
-    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+  <!-- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
       <md-button>{{title1}}</md-button>
       <md-button md-no-ink="" class="md-primary">Primary (md-noink)</md-button>
       <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
@@ -74,8 +74,19 @@
         <md-icon md-svg-icon="img/icons/launch.svg"></md-icon>
       </md-button>
       <div class="label">Icon Button</div>
-    </section>
-  </md-content>
+    </section> -->
+  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+    <md-input-container>
+      <label>New list item</label>
+      <input id="newListItem" type="text" placeholder="new item" ng-model="vm.newListItem">
+    </md-input-container>s
+    <md-button md-no-ink="" class="md-raised md-primary" ng-click="vm.addItemToList()">add item</md-button>
+
+
+  </section>
+
+
+  <!-- </md-content> -->
 </div>
 
 <!--

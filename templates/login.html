@@ -1,0 +1,17 @@
+<section id="page-splash" style="display: flex;">
+    <md-input-container>
+        <label>Email</label>
+        <input id="txtEmail" type="email" placeholder="Email" ng-model="vm.txtEmail">
+    </md-input-container>
+
+    <md-input-container>
+        <label>Password</label>
+        <input id="txtPassword" type="password" placeholder="Password" ng-model="vm.txtPassword">
+    </md-input-container>
+
+    <md-button id="btnLogin" class="md-raised md-primary" ng-model="btnLogin" ng-click="vm.login()">Sign In</md-button>
+    <md-button id="btnLogin" class="md-raised md-primary">Sign In With Google</md-button>
+    <!-- TODO complete functionality for google sign in -->
+    <!-- <button id="btnSignUp" class="btn btn-secondary" ng-if="!vm.isLoggedIn" ng-click="vm.signUp()">Sign Up</button> -->
+    <md-button id="btnSignUpWithGoogle" class="md-raised md-secondary" ng-click="vm.signUpWithGooglePopUp()">Sign Up With Google</md-button>
+</section>

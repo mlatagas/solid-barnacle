@@ -2,10 +2,10 @@
     angular
         .module('app')
         .controller('LoginController', loginController);
-    loginController.$inject = ['firebase', '$state', '$stateParams'];
-    function loginController(firebase, $state, $stateParams) {
+    loginController.$inject = ['firebase','$firebaseObject', '$state', '$stateParams'];
+    function loginController(firebase,$firebaseObject, $state, $stateParams) {
         var vm = this;
-        //angular.extend(vm, $stateParams);// I have no idea what this line does
+        angular.extend(vm, $stateParams);// I have no idea what this line does
         vm.login = login;
         vm.logOut = logOut;
         vm.signUp = signUp;
@@ -14,14 +14,6 @@
         vm.isLoggedIn;
         vm.signUpWithGooglePopUp = signUpWithGooglePopUp;
         var provider = new firebase.auth.GoogleAuthProvider();
-
-        
-
-        function activate() {
-           // Add a realtime authentication listerner
-
-
-        }
 
         firebase.auth().onAuthStateChanged(firebaseUser => {
             if (!firebaseUser) {
@@ -33,16 +25,12 @@
 
 
         function setDisplayName(firebaseUser) {
-            console.log(firebaseUser.displayName);
             if (!firebaseUser.displayName) {
                 //Allow users to set username
                 vm.userName = firebaseUser.email;
                 return;
             }
-
             vm.userName = firebaseUser.displayName;
-            console.log(vm.userName);
-
         }
 
         function login() {
@@ -54,9 +42,10 @@
         }
 
         function logOut() {
+            console.log('Signing Out');
             firebase.auth().signOut().then(function () {
                 console.log('Signed Out');
-                // GOTO Landing
+                $state.go("login");
             }, function (error) {
                 console.error('Sign Out Error', error);
             });
@@ -70,9 +59,7 @@
             promise.catch(e => console.log(e.message)); //Im not familiar with this syntax
         }
 
-        function logOut() {
-            firebase.auth().signOut();
-        }
+
 
         function signUpWithGooglePopUp() {
             console.log("inside sign up with google popup");
