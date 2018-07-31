@@ -1,4 +1,4 @@
-<div ng-cloak="">
+<div>
   <!-- <md-content> -->
 
   <!-- <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
@@ -66,7 +66,7 @@
       </md-button>
       <md-button class="md-icon-button md-accent" aria-label="Favorite">
         <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
-      </md-button>
+      </md-button> 
       <md-button class="md-icon-button" aria-label="More">
         <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
       </md-button>
@@ -75,15 +75,24 @@
       </md-button>
       <div class="label">Icon Button</div>
     </section> -->
+
+ 
+  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
+    <ul>
+      <li ng-repeat="item in vm.items">
+        {{item.name}}
+      </li>
+    </ul>
+  </section>
+
+
   <section layout="row" layout-sm="column" layout-align="center center" layout-wrap="">
     <md-input-container>
-      <label>New list item</label>
       <input id="newListItem" type="text" placeholder="new item" ng-model="vm.newListItem">
-    </md-input-container>s
+    </md-input-container>
     <md-button md-no-ink="" class="md-raised md-primary" ng-click="vm.addItemToList()">add item</md-button>
-
-
   </section>
+
 
 
   <!-- </md-content> -->

@@ -9,15 +9,17 @@
         var provider = new firebase.auth.GoogleAuthProvider();
         const dbRefobject = firebase.database().ref().child('app');
         const dbReflist = dbRefobject.child('items');
-        vm.items = dbReflist;
+        vm.items;
+
+
         dbReflist.on('child_added', snap => console.log(snap.val()));
+
         vm.addItemToList = addItemToList;
-        vm.testFunction = testFunction;
         vm.newListItem;
+        activate();
 
-
-        function testFunction() {
-            console.log("testing one two one two");
+        function activate() {
+            dbReflist.on('value', snap => vm.items = snap.val());
         }
 
 
@@ -31,7 +33,7 @@
             var updates = {};
 
             var newlistItemKey = dbReflist.push().key;
-            updates['app/items/' + newlistItemKey] = { "name": name };
+            updates['app/items/' + newlistItemKey] = { "name": vm.newListItem };
 
             return firebase.database().ref().update(updates);
 
